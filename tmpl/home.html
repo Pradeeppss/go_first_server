@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Home</title>
+</head>
+<body>
+    <header><h1>Go home</h1></header>
+    <main>
+        <ul>
+            {{range $val:= .}}
+            <li><a href="view/{{$val}}">{{$val}}</a></li>
+            {{end}}
+        </ul>
+    </main>
+    <form action="/create" method="post">
+        <input minlength="2" type="text" name="title">
+        <button>create</button>
+    </form>
+</body>
+</html>
