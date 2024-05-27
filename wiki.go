@@ -79,6 +79,7 @@ func editHandler(w http.ResponseWriter, r *http.Request, fileTitle string) {
 	renderTemplate(w, p, "save")
 }
 func homeHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	files := getAllwikis()
 	t, err := template.ParseFiles("tmpl/home.html")
 	if err != nil {
